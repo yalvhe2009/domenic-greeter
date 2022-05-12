@@ -1,0 +1,42 @@
+{
+  "name": "domenic-greeter",
+  "version": "1.0.0",
+  "description": "更好的打招呼",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yalvhe2009/domenic-greeter.git"
+  },
+  "keywords": ["Greeter", "打招呼"],
+  "author": "domenic",
+  "license": "ISC",
+  "files": [
+    "lib/**/*"
+  ],
+  "bugs": {
+    "url": "https://github.com/yalvhe2009/domenic-greeter/issues"
+  },
+  "homepage": "https://github.com/yalvhe2009/domenic-greeter#readme",
+  "devDependencies": {
+    "@types/jest": "^27.5.1",
+    "jest": "^28.1.0",
+    "prettier": "^2.6.2",
+    "ts-jest": "^28.0.2",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.6.4"
+  }
+}
